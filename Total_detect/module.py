@@ -76,7 +76,7 @@ def set_config(classes_to_filter):
   return opt
 
 
-def detect(video_path):
+def detect(video_path, opt):
   # Initializing video object
   video = cv2.VideoCapture(video_path)
 
@@ -167,6 +167,6 @@ def detect(video_path):
 
 opt = set_config(['person'])
 video_path = '/content/gdrive/MyDrive/capstone22/video.mp4'
-cnt, fps = detect(video_path)
+cnt, fps = detect(video_path, opt)
 
 print(f'Total Count of Avatars {int(cnt//fps)}')
